@@ -38,7 +38,7 @@ RUN xdebugPath=/usr/local/etc/php/conf.d/ && \
     echo xdebug.remote_autostart=0 >> $xdebugPath/xdebug.ini; \
     echo xdebug.remote_connect_back=1 >> $xdebugPath/xdebug.ini; \
     echo xdebug.remote_port=9000 >> $xdebugPath/xdebug.ini; \
-    echo xdebug.remote_log=/tmp/php7-xdebug.log >> $xdebugPath/xdebug.ini;
+    echo xdebug.remote_log=/tmp/php-xdebug.log >> $xdebugPath/xdebug.ini;
 
 COPY /conf/entrypoint.sh /entrypoint.sh
 
