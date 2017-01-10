@@ -1,6 +1,6 @@
 # docker-php
 
-## Base PHP (7.1.x) with some extensions
+## Base PHP (5.6.x) with some extensions
 
 - PHPUnit, because test your application is important :)
 - xdebug for debug your application with PHPStorm, Eclipse ...
@@ -21,6 +21,6 @@
 Beacause theses images extend official PHP image, you can refer to official documentation [official documentation](https://hub.docker.com/_/php/) 
 
 ## Versions
-| Tag | PHP 7 
+| Tag | PHP 5
 |-----|-------
-| 1.0 | 7.1.0
+| 5.6 | 5.6.29
