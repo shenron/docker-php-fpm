@@ -23,4 +23,4 @@ Beacause theses images extend official PHP image, you can refer to official docu
 ## Versions
 | Tag | PHP 7 
 |-----|-------
-| 1.0 | 7.1.0
+| 7.1 | 7.1.0
