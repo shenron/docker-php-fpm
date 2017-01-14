@@ -1,4 +1,4 @@
-FROM php:7.1.0-fpm
+FROM php:5.6-fpm
 
 RUN apt-get update && \
     apt-get install -y \
@@ -10,19 +10,8 @@ COPY /conf/php-fpm.conf /usr/local/etc/
 
 RUN pecl install\
     xdebug\
-    # memcached\
+    memcached\
     zip
-
-# Today the install of memcached with pecl not working with php7
-# Install it manually
-RUN apt-get install -y git &&\
-    cd / &&\
-    git clone https://github.com/php-memcached-dev/php-memcached.git &&\
-    cd php-memcached &&\
-    phpize &&\
-    ./configure --disable-memcached-sasl &&\
-    make &&\
-    make install
 
 COPY /conf/php.ini /usr/local/etc/php/
 
