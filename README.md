@@ -4,7 +4,7 @@
 
 - PHPUnit, because test your application is important :)
 - xdebug for debug your application with PHPStorm, Eclipse ...
-> Internal port: `22`
+> If the host is different of Gnu Linux, use the environment variable `IP_HOST`
 - memcached to store sessions in an external memcache server
 > host: `memcached`
 - zlib to compress (REST) ouput, more informations: [zlib.configuration](http://php.net/manual/en/zlib.configuration.php#ini.zlib.output-compression)  
@@ -21,10 +21,8 @@
 Beacause theses images extend official PHP image, you can refer to official documentation [official documentation](https://hub.docker.com/_/php/) 
 
 ## Versions
+[docker hub / shenron](https://hub.docker.com/r/shenron/php-fpm/)
 | Tag | PHP 5
 |-----|-------
-<<<<<<< HEAD
 | 7.1 | 7.1.0
-=======
 | 5.6 | 5.6.29
->>>>>>> 95ae2b76fbc6352db3a063bc13a9e6ab52513d70
