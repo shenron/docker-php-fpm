@@ -20,9 +20,5 @@
 ## How use these images
 Beacause theses images extend official PHP image, you can refer to official documentation [official documentation](https://hub.docker.com/_/php/) 
 
-## Versions
+## docker hub
 [docker hub / shenron](https://hub.docker.com/r/shenron/php-fpm/)
-| Tag | PHP 5
-|-----|-------
-| 7.1 | 7.1.0
-| 5.6 | 5.6.29
