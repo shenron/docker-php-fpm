@@ -4,7 +4,7 @@
 
 - PHPUnit, because test your application is important :)
 - xdebug for debug your application with PHPStorm, Eclipse ...
-> Internal port: `22`
+> If the host is different of Gnu Linux, use the environment variable `IP_HOST`
 - memcached to store sessions in an external memcache server
 > host: `memcached`
 - zlib to compress (REST) ouput, more informations: [zlib.configuration](http://php.net/manual/en/zlib.configuration.php#ini.zlib.output-compression)  
