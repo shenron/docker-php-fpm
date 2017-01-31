@@ -15,20 +15,6 @@ RUN pecl install\
 
 COPY /conf/php.ini /usr/local/etc/php/
 
-# Update PHP config
-RUN extFolder=$(php-config --extension-dir) && \
-    echo "zend_extension=$extFolder/xdebug.so" >> /usr/local/etc/php/php.ini
-
-RUN xdebugPath=/usr/local/etc/php/conf.d/ && \
-    touch $xdebugPath/xdebug.ini; \
-    ip=$(/sbin/ip route|awk '/default/ { print $3 }') && \
-        echo "xdebug.remote_host=$ip" >> $xdebugPath/xdebug.ini; \
-    echo xdebug.remote_enable=1 >> $xdebugPath/xdebug.ini; \
-    echo xdebug.remote_autostart=0 >> $xdebugPath/xdebug.ini; \
-    echo xdebug.remote_connect_back=1 >> $xdebugPath/xdebug.ini; \
-    echo xdebug.remote_port=9000 >> $xdebugPath/xdebug.ini; \
-    echo xdebug.remote_log=/tmp/php-xdebug.log >> $xdebugPath/xdebug.ini;
-
 COPY /conf/entrypoint.sh /entrypoint.sh
 
 RUN wget https://phar.phpunit.de/phpunit.phar 
