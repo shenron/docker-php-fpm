@@ -1,38 +1,29 @@
 FROM php:7.1-fpm
 
+MAINTAINER Thomas CASTELLY <thomas@tcy.io>
+
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update && \
-    apt-get install -y \
-    zlib1g-dev \
-    libmemcached-dev \
-    unzip wget
+  apt-get install -y \
+  zlib1g-dev \
+  libmemcached-dev \
+  unzip wget
 
 COPY /conf/php-fpm.conf /usr/local/etc/
 
 RUN pecl install\
-    xdebug\
-    # memcached\
-    zip
-
-# Today the install of memcached with pecl not working with php7
-# Install it manually
-RUN apt-get install -y git &&\
-    cd / &&\
-    git clone https://github.com/php-memcached-dev/php-memcached.git &&\
-    cd php-memcached &&\
-    phpize &&\
-    ./configure --disable-memcached-sasl &&\
-    make &&\
-    make install
+  xdebug\
+  memcached\
+  zip
 
 COPY /conf/php.ini /usr/local/etc/php/
 
 COPY /conf/entrypoint.sh /entrypoint.sh
 
-RUN wget https://phar.phpunit.de/phpunit.phar 
-
-RUN chmod +x phpunit.phar
-
-RUN mv phpunit.phar /usr/local/bin/phpunit
+RUN wget https://phar.phpunit.de/phpunit.phar &&\ 
+  chmod +x phpunit.phar && \
+  mv phpunit.phar /usr/local/bin/phpunit
 
 ENTRYPOINT ["/entrypoint.sh"]
 
