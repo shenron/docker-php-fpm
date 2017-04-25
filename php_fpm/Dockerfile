@@ -8,7 +8,11 @@ RUN apt-get update && \
   apt-get install -y \
   zlib1g-dev \
   libmemcached-dev \
-  unzip wget
+  wget
+
+# Fix Zip Archive
+RUN rm -rf /var/lib/apt/lists/* \
+  && docker-php-ext-install zip 
 
 COPY /conf/php-fpm.conf /usr/local/etc/
 
