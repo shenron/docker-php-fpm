@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
   apt-get install -y \
-  zlib1g-dev \
+  libzip-dev \
   libmemcached-dev \
   wget
 
@@ -14,7 +14,7 @@ RUN apt-get update && \
 RUN rm -rf /var/lib/apt/lists/* \
   && docker-php-ext-install zip 
 
-COPY /conf/php-fpm.conf /usr/local/etc/
+COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 RUN pecl install\
   xdebug\
