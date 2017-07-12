@@ -9,7 +9,7 @@
 > host: `memcached`
 - zlib to compress (REST) ouput, more informations: [zlib.configuration](http://php.net/manual/en/zlib.configuration.php#ini.zlib.output-compression)  
 - opcache to cache the application in production
-> ENV=DEV to disable it
+> PHP_ENV=development to disable it
 
 
 
