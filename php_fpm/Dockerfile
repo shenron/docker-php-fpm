@@ -18,8 +18,7 @@ COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 RUN pecl install\
   xdebug\
-  memcached\
-  zip
+  memcached
 
 COPY /conf/php.ini /usr/local/etc/php/
 
