@@ -5,7 +5,7 @@ extFolder=$(php-config --extension-dir)
 
 # allow debug in DEV
 # update config file only if needed
-if [ "$ENV" == "DEV" ]; then
+if [ "$PHP_ENV" == "development" ]; then
   if grep -q "xdebug" /usr/local/etc/php/php.ini; then
     echo "[LOG] debug config already apply"
   else
