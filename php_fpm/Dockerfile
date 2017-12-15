@@ -17,7 +17,7 @@ RUN rm -rf /var/lib/apt/lists/* \
 COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 RUN pecl install\
-  xdebug\
+  xdebug@2.6.0alpha2\
   memcached
 
 COPY /conf/php.ini /usr/local/etc/php/
