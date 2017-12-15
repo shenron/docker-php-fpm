@@ -10,15 +10,12 @@ RUN apt-get update && \
   libmemcached-dev \
   wget
 
-# Fix Zip Archive
-RUN rm -rf /var/lib/apt/lists/* \
-  && docker-php-ext-install zip 
-
 COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 RUN pecl install\
   xdebug@2.6.0alpha2\
-  memcached
+  memcached\
+  zip
 
 COPY /conf/php.ini /usr/local/etc/php/
 
