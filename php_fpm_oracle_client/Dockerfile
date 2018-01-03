@@ -1,5 +1,7 @@
 FROM shenron/php-fpm:7.2
 
+ENV LD_LIBRARY_PATH /usr/local/instantclient_12_1/
+
 RUN apt-get update && \
   apt-get install -y \
   unzip \
