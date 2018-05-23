@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  entrypoint:
+    build: ./entrypoint
+    container_name: demo-proxy
+    command: ["nginx", "-g", "daemon off;"]
+    ports:
+      - "8181:80"
+    depends_on:
+      - front
+
+  front:
+    image: tazcorepetrol/taz:front-${TAZ_APP_VERSION}
+    build: ./front
+    container_name: demo-front
+    volumes:
+      - ./front/:/var/www/src
+    environment:
+      # env use by the docker images to enable debug
+      - IP_HOST=${DEMO_IP_HOST}
+      - PHP_ENV=development
+    command: php-fpm
+

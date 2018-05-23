@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Add an IP address for Mac host
+# used for PHP debug
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export DEMO_IP_HOST="192.168.46.49"
+  echo "[LOG] Add an IP address for MacOS X ($DEMO_IP_HOST)"
+  echo "[LOG] Usefull for PHP debug"
+  sudo ifconfig lo0 alias $DEMO_IP_HOST
+fi
+
+docker-compose \
+    -f ./docker-compose.yml up \
+    --build
