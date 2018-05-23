@@ -12,12 +12,12 @@ Simple REST API with PHP, help to debug.
 ##### Languages & Frameworks > PHP
 - Select PHP Language level: 7.2
 - Configure a CLI Interpreter
--- From Docker, Vagrant, VM, Remote
--- Select Docker and your server (by default it's `Docker`)
--- Use an image with the debugger enable inthe php.ini (`shenron/php-fpm:7.2-dev`)
--- Select `php` as path
--- wait ...
--- Check volume binding: `./front` from the host has to be bind to `/var/www`
+  * From Docker, Vagrant, VM, Remote
+  * Select Docker and your server (by default it's `Docker`)
+  * Use an image with the debugger enable inthe php.ini (`shenron/php-fpm:7.2-dev`)
+  * Select `php` as path
+  * wait ...
+  * Check volume binding: `./front` from the host has to be bind to `/var/www`
 
 ![alt Plugins](https://raw.githubusercontent.com/shenron/docker-php-fpm/master/demo_debug/screenshots/php-debug-02.png)
 ![alt Plugins](https://raw.githubusercontent.com/shenron/docker-php-fpm/master/demo_debug/screenshots/php-debug-03.png)
