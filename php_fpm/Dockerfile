@@ -13,7 +13,7 @@ RUN apt-get update && \
 COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 RUN pecl install\
-  xdebug-2.6.0beta1\
+  xdebug-2.7.0beta1\
   memcached\
   zip
 
