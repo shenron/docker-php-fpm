@@ -26,7 +26,7 @@ RUN set -ex \
     && docker-php-ext-install $MEMCACHED \
     && rm -rf $MEMCACHED
 
-COPY /conf/php.ini /usr/local/etc/php/
+COPY /conf/php.ini "$PHP_INI_DIR/php.ini"
 
 COPY /conf/entrypoint.sh /entrypoint.sh
 
