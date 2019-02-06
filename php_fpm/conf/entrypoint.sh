@@ -30,6 +30,8 @@ if [ "$PHP_ENV" == "development" ]; then
     echo xdebug.remote_log=/tmp/php-xdebug.log >> $xdebugPath/xdebug.ini
 
     sed -i "s/opcache.revalidate_freq=60/opcache.revalidate_freq=0/" /usr/local/etc/php/php.ini
+    sed -i "s/opcache.enable=1/opcache.enable=0/" /usr/local/etc/php/php.ini
+    sed -i "s/opcache.enable_cli=1/opcache.enable_cli=0/" /usr/local/etc/php/php.ini
   fi
 else
   if [ -f $xdebugPath/xdebug.ini ]; then
