@@ -12,7 +12,7 @@ RUN apt-get update && \
 
 # Fix Zip Archive
 RUN rm -rf /var/lib/apt/lists/* \
-  && docker-php-ext-install zip 
+  && docker-php-ext-install zip
 
 COPY /conf/php-fpm.conf /usr/local/etc/
 
@@ -24,7 +24,7 @@ COPY /conf/php.ini /usr/local/etc/php/
 
 COPY /conf/entrypoint.sh /entrypoint.sh
 
-RUN wget https://phar.phpunit.de/phpunit.phar && \ 
+RUN wget https://phar.phpunit.de/phpunit.phar && \
   chmod +x phpunit.phar && \
   mv phpunit.phar /usr/local/bin/phpunit
 

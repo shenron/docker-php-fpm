@@ -15,7 +15,7 @@ if [ "$PHP_ENV" == "development" ]; then
 
     # On linux it's possible to try to connect to the client
     # On MacOS X, the IP of host have to be set
-    if [ -z "$IP_HOST" ]; then 
+    if [ -z "$IP_HOST" ]; then
       echo xdebug.remote_connect_back=1 >> $xdebugPath/xdebug.ini
     else
       echo xdebug.remote_connect_back=0 >> $xdebugPath/xdebug.ini
@@ -28,8 +28,10 @@ if [ "$PHP_ENV" == "development" ]; then
     echo xdebug.remote_log=/tmp/php-xdebug.log >> $xdebugPath/xdebug.ini
 
     sed -i "s/opcache.revalidate_freq=60/opcache.revalidate_freq=0/" /usr/local/etc/php/php.ini
+    sed -i "s/opcache.enable=1/opcache.enable=0/" /usr/local/etc/php/php.ini
+    sed -i "s/opcache.enable_cli=1/opcache.enable_cli=0/" /usr/local/etc/php/php.ini
   fi
-else 
+else
   if [ -f $xdebugPath/xdebug.ini ]; then
     rm $xdebugPath/xdebug.ini
     sed -i "/xdebug/d" /usr/local/etc/php/php.ini
