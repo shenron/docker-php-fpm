@@ -12,10 +12,13 @@
 > PHP_ENV=development to disable it
 
 
-
 ## Optional dependencies
 
 - oci8, if your project need an Oracle database
+
+## Logs
+- php.ini: `/var/log/php-error.log`
+- php-fpm: `/proc/self/fd/2` 
 
 ## How use these images
 Beacause theses images extend official PHP image, you can refer to official documentation [official documentation](https://hub.docker.com/_/php/) 
