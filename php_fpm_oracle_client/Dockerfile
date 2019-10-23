@@ -10,12 +10,10 @@ RUN apt-get update && \
 # install oracle client
 COPY /conf/ /tmp/
 
-RUN unzip /tmp/instantclient-basic-linux.x64-12.2.0.1.0.zip -d /usr/local/ && \
-  unzip /tmp/instantclient-sdk-linux.x64-12.2.0.1.0.zip -d /usr/local/ && \
-  unzip /tmp/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip -d /usr/local/ && \
-  ln -s /usr/local/instantclient_12_2 /usr/local/instantclient && \
-  ln -s /usr/local/instantclient/libclntsh.so.12.1 /usr/local/instantclient/libclntsh.so && \
-  ln -s /usr/local/instantclient/sqlplus /usr/bin/sqlplus && \
-  rm /tmp/instantclient-basic-linux.x64-12.2.0.1.0.zip /tmp/instantclient-sdk-linux.x64-12.2.0.1.0.zip /tmp/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip &&\
+RUN unzip /tmp/instantclient-basiclite-linux.x64-19.3.0.0.0dbru.zip -d /usr/local/ && \
+  unzip /tmp/instantclient-sdk-linux.x64-19.3.0.0.0dbru.zip -d /usr/local/ && \
+  rm /tmp/instantclient-basiclite-linux.x64-19.3.0.0.0dbru.zip /tmp/instantclient-sdk-linux.x64-19.3.0.0.0dbru.zip &&\
+  ln -s /usr/local/instantclient_19_3 /usr/local/instantclient && \
   echo 'instantclient,/usr/local/instantclient' | pecl install oci8 && \
   echo "extension=oci8.so" >> /usr/local/etc/php/php.ini
+
