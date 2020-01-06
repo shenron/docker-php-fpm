@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:7.4-fpm
 
 MAINTAINER Thomas CASTELLY <thomas@tcy.io>
 
@@ -13,7 +13,7 @@ RUN apt-get update && \
 COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 RUN pecl install\
-  xdebug-2.7.2\
+  xdebug-2.9.0\
   memcached\
   zip
 
