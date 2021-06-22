@@ -1,6 +1,6 @@
 # docker-php
 
-## Base PHP (7.3.x) with some extensions
+## Base PHP (8.0.x) with some extensions
 
 - PHPUnit, because test your application is important :)
 - xdebug for debug your application with PHPStorm, Eclipse ...

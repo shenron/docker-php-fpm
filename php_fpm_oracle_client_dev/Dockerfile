@@ -1,4 +1,4 @@
-FROM shenron/php-fpm-oracle-client:7.4
+FROM shenron/php-fpm-oracle-client:8.0
 
 RUN echo "zend_extension=$(php-config --extension-dir)/xdebug.so" >> /usr/local/etc/php/php.ini && \
   sed -i "s/opcache.enable=1/opcache.enable=0/" /usr/local/etc/php/php.ini &&\
