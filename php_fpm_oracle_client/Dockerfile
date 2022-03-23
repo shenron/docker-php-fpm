@@ -1,4 +1,4 @@
-FROM ghcr.io/shenron/php-fpm:8.1.4
+FROM ghcr.io/shenron/php-fpm:8.1
 
 ENV LD_LIBRARY_PATH /usr/local/instantclient/
 

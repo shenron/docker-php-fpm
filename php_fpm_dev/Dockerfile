@@ -1,4 +1,4 @@
-FROM ghcr.io/shenron/php-fpm:8.1.4
+FROM ghcr.io/shenron/php-fpm:8.1
 
 RUN echo "zend_extension=$(php-config --extension-dir)/xdebug.so" >> $PHP_INI_DIR/php.ini && \
   sed -i "s/opcache.enable=1/opcache.enable=0/" $PHP_INI_DIR/php.ini &&\
