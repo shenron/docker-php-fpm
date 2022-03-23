@@ -1,6 +1,6 @@
 # docker-php
 
-## Base PHP (8.0.x) with some extensions
+## Base PHP (8.1.x) with some extensions
 
 - PHPUnit, because test your application is important :)
 - xdebug for debug your application with PHPStorm, Eclipse ...
@@ -22,6 +22,3 @@
 
 ## How use these images
 Beacause theses images extend official PHP image, you can refer to official documentation [official documentation](https://hub.docker.com/_/php/) 
-
-## docker hub
-[docker hub / shenron](https://hub.docker.com/r/shenron/php-fpm/)

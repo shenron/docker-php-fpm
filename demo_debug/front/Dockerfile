@@ -1,4 +1,4 @@
-FROM shenron/php-fpm:7.2
+FROM ghcr.io/shenron/php-fpm:8.1
 
 RUN mkdir /var/www/src
 
