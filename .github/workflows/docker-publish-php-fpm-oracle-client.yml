@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows: ["php-fpm"]
     types: [completed]
+    branches: [latest]
 
 env:
   IMAGE_NAME: shenron/php-fpm-oracle-client
