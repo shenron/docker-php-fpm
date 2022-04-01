@@ -20,6 +20,8 @@ RUN /tmp/install_oracle_driver.sh
 # final stage
 FROM ghcr.io/shenron/php-fpm:$PHP_VERSION
 
+ENV LD_LIBRARY_PATH /usr/local/instantclient/
+
 COPY --from=builder /usr/local/instantclient /usr/local/instantclient
 
 RUN echo 'instantclient,/usr/local/instantclient' | pecl install oci8 && \
