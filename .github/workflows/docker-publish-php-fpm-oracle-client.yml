@@ -48,7 +48,7 @@ jobs:
         with:
           context: ./php_fpm_oracle_client/
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           platforms: ${{ env.TARGET_PLATFORMS }}
           cache-from: type=gha
