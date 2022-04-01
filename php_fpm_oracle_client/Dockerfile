@@ -7,8 +7,7 @@ ENV LD_LIBRARY_PATH /usr/local/instantclient/
 
 RUN apt-get update && \
   apt-get install -y \
-  unzip \
-  libaio-dev
+  unzip
 
 # install oracle client
 COPY /conf/ /tmp/
@@ -19,6 +18,10 @@ RUN /tmp/install_oracle_driver.sh
 
 # final stage
 FROM ghcr.io/shenron/php-fpm:$PHP_VERSION
+
+RUN apt-get update && \
+  apt-get install -y \
+  libaio-dev
 
 ENV LD_LIBRARY_PATH /usr/local/instantclient/
 
