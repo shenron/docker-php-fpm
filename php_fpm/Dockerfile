@@ -2,6 +2,8 @@ FROM php:8.1.4-fpm
 
 MAINTAINER Thomas CASTELLY <thomas@tcy.io>
 
+ARG MEMCACHED_HOST=memcached
+
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
@@ -13,11 +15,13 @@ RUN apt-get update && \
 COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 RUN pecl install\
-  xdebug-3.0.0\
+  xdebug-3.1.4\
   memcached\
   zip
 
 COPY /conf/php.ini "$PHP_INI_DIR/php.ini"
+
+RUN sed -i "s/\$MEMCACHED_HOST/$MEMCACHED_HOST/g" $PHP_INI_DIR/php.ini
 
 COPY /conf/entrypoint.sh /entrypoint.sh
 
