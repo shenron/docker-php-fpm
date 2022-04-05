@@ -40,4 +40,6 @@ else
   fi
 fi
 
+sed -i "s/\$MEMCACHED_HOST/$MEMCACHED_HOST/g" /usr/local/etc/php/php.ini
+
 exec "$@"
