@@ -1,5 +1,7 @@
 FROM ghcr.io/shenron/php-fpm:8.1
 
+RUN pecl install xdebug
+
 RUN echo "zend_extension=$(php-config --extension-dir)/xdebug.so" >> $PHP_INI_DIR/php.ini && \
   sed -i "s/opcache.enable=1/opcache.enable=0/" $PHP_INI_DIR/php.ini &&\
   sed -i "s/opcache.enable_cli=1/opcache.enable_cli=0/" $PHP_INI_DIR/php.ini &&\
