@@ -3,7 +3,6 @@
 ## Base PHP (8.1.x) with some extensions
 
 - PHPUnit, because test your application is important :)
-- xdebug for debug your application with PHPStorm, Eclipse ...
 > If the host is different of Gnu Linux, use the environment variable `IP_HOST`
 - memcached to store sessions in an external memcache server
 > host: `memcached`

@@ -15,7 +15,6 @@ RUN apt-get update && \
 COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 RUN pecl install\
-  xdebug-3.1.4\
   memcached\
   zip
 
@@ -31,4 +30,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 WORKDIR /var/www
 
-EXPOSE 9000 22
+EXPOSE 9000
