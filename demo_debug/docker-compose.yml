@@ -11,7 +11,7 @@ services:
       - front
 
   front:
-    image: org/taz:front-${TAZ_APP_VERSION}
+    image: org/front-${APP_VERSION}
     build: ./front
     container_name: demo-front
     volumes:
