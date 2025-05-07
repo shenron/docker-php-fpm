@@ -10,8 +10,10 @@ RUN apt-get update && \
   apt-get install -y \
   libzip-dev \
   libmemcached-dev \
-  libssl-dev \ # fix pec libmemcached install
-  wget
+  wget \
+
+  # fix pec libmemcached install
+  libssl-dev
 
 COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
