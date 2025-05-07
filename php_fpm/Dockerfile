@@ -1,4 +1,4 @@
-FROM php:8.2.0-fpm
+FROM php:8.4.6-fpm
 
 MAINTAINER Thomas CASTELLY <thomas@tcy.io>
 
@@ -10,6 +10,7 @@ RUN apt-get update && \
   apt-get install -y \
   libzip-dev \
   libmemcached-dev \
+  libssl-dev \ # fix pec libmemcached install
   wget
 
 COPY /conf/php-fpm.conf /usr/local/etc/php-fpm.conf

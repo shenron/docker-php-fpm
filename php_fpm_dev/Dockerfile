@@ -1,4 +1,4 @@
-FROM ghcr.io/shenron/php-fpm:8.2
+FROM ghcr.io/shenron/php-fpm:8.4
 
 RUN pecl install xdebug
 

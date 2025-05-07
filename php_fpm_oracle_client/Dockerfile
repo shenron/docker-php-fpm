@@ -1,7 +1,7 @@
 # builder
 
-# PHP 8.2.0
-ARG PHP_VERSION=8.2
+# PHP 8.4.6
+ARG PHP_VERSION=8.4.6
 
 FROM ghcr.io/shenron/php-fpm:$PHP_VERSION as builder
 
